@@ -3,7 +3,7 @@
 
 auto test, java maven selenium webdriver
 
-Test case: 005
+Test case: 006
 
 Task selection, hover cursor over link, enter data in text fields, then choose the picture, then click button to apply
 

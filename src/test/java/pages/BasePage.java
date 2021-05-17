@@ -15,13 +15,18 @@ public class BasePage {
     }
 
     // Wait wrapper method
-    public void waitVisibiluty(By element) {
+    public void waitVisibility(By element) {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(element));
     }
 
     // Click method
     public void click(By element) {
-        waitVisibiluty(element);
+        waitVisibility(element);
         driver.findElement(element).click();
+    }
+
+    // Upload file
+    public void upload(By element, String filePath){
+        driver.findElement(element).sendKeys(filePath);
     }
 }
