@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class BasePage {
     public WebDriver driver;
     public WebDriverWait wait;
@@ -26,7 +28,13 @@ public class BasePage {
     }
 
     // Upload file
-    public void upload(By element, String filePath){
+    public void upload(By element, String filePath) {
         driver.findElement(element).sendKeys(filePath);
+    }
+
+    // Check content visible
+    public void isVisible(By element) {
+        waitVisibility(element);
+        assertTrue(driver.findElement(element).isDisplayed());
     }
 }
